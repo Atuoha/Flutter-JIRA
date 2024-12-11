@@ -1,4 +1,4 @@
-# Flutter Task Kanban
+# Flutter Task Kanban (Best Experienced on a wider screen)
 
 **Create a .env file and add this:**
 API_TOKEN=[TOKEN KEY] 
