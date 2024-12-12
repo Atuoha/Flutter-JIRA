@@ -80,6 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
     controller.addGroup(group3);
 
     context.read<TodoImplBloc>().add(const RetreiveProjects());
+
+    setState(() {
+      projectName = GlobalConfig.storageService
+          .getStringValue(AppStrings.CURRENT_PROJECT_NAME);
+    });
   }
 
   // task moved callback
@@ -127,9 +132,10 @@ class _HomeScreenState extends State<HomeScreen> {
     final List<RichTextItem> items =
         groupItems.whereType<RichTextItem>().toList();
 
-    if (items.isEmpty && GlobalConfig.storageService
-        .getStringValue(AppStrings.CURRENT_PROJECT_ID)
-        .isNotEmpty) {
+    if (items.isEmpty &&
+        GlobalConfig.storageService
+            .getStringValue(AppStrings.CURRENT_PROJECT_ID)
+            .isNotEmpty) {
       toastInfo(
         msg: AppStrings.EMPTY_BOARD_MSG,
         status: Status.error,

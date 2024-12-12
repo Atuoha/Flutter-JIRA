@@ -11,4 +11,6 @@ class AppStrings {
   static const String EMPTY_BOARD_MSG = "No items found in the DONE group";
   static const String NEW_PROJECT_MSG = "Started a new project and moved the completed task to history";
   static const String CURRENT_PROJECT_ID = 'CURRENT_PROJECT_ID';
+  static const String CURRENT_PROJECT_NAME = 'CURRENT_PROJECT_NAME';
+
 }

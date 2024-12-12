@@ -30,6 +30,9 @@ class TodoistRepositoryImpl implements TodoistRepository {
 
       GlobalConfig.storageService
           .setStringValue(AppStrings.CURRENT_PROJECT_ID, project.id);
+
+      GlobalConfig.storageService
+          .setStringValue(AppStrings.CURRENT_PROJECT_NAME, project.name);
       logger.e("PROJECT: ${project.id}");
       return project;
     } on CustomError catch (e) {
