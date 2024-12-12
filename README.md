@@ -81,3 +81,6 @@ OR
 
 **Create an .env file and add this:**
 API_TOKEN=[TOKEN KEY] 
+
+
+**IF YOU GET A 403 STATUS ERROR - FORBIDDEN, KNOW THAT YOU HAVE EXCEEDED YOUR LIMIT:**

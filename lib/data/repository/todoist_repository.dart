@@ -35,15 +35,14 @@ class TodoistRepositoryImpl implements TodoistRepository {
           .setStringValue(AppStrings.CURRENT_PROJECT_NAME, project.name);
       logger.e("PROJECT: ${project.id}");
       return project;
-    } on CustomError catch (e) {
+    } catch (e) {
+      logger.e("ERROR: $e");
+
       throw CustomError(
         errorMsg: "Failed to add project: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 
@@ -63,15 +62,14 @@ class TodoistRepositoryImpl implements TodoistRepository {
       );
       logger.e("TASK: ${task.id}");
       return task;
-    } on CustomError catch (e) {
+
+    } catch (e) {
+      logger.e("ERROR: $e");
       throw CustomError(
         errorMsg: "Failed to add task: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 
@@ -89,15 +87,13 @@ class TodoistRepositoryImpl implements TodoistRepository {
             "content": content,
           },
       );
-    } on CustomError catch (e) {
+    } catch (e) {
+      logger.e("ERROR: $e");
       throw CustomError(
         errorMsg: "Failed to update task: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 
@@ -111,15 +107,13 @@ class TodoistRepositoryImpl implements TodoistRepository {
         taskId,
         requestId,
       );
-    } on CustomError catch (e) {
+    } catch (e) {
+      logger.e("ERROR: $e");
       throw CustomError(
         errorMsg: "Failed to complete task: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 
@@ -133,15 +127,13 @@ class TodoistRepositoryImpl implements TodoistRepository {
         projectId,
         requestId,
       );
-    } on CustomError catch (e) {
+    } catch (e) {
+      logger.e("ERROR: $e");
       throw CustomError(
         errorMsg: "Failed to delete project: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 
@@ -149,17 +141,15 @@ class TodoistRepositoryImpl implements TodoistRepository {
   Future<List<ProjectResponse>> retrieveProjects() async {
     try {
       final projects = await _todoistApiServiceClient.retrieveProjects();
-
       return projects;
-    } on CustomError catch (e) {
+
+    } catch (e) {
+      logger.e("ERROR: $e");
       throw CustomError(
         errorMsg: "Failed to retrieve project: $e",
         plugin: "",
         code: "",
       );
-    } catch (e) {
-      logger.e("ERROR: $e");
-      rethrow;
     }
   }
 }

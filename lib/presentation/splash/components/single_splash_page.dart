@@ -13,13 +13,13 @@ Widget singleSplashPage({
       mainAxisAlignment: kIsWeb? MainAxisAlignment.start: MainAxisAlignment.center,
       crossAxisAlignment:kIsWeb? CrossAxisAlignment.center: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(splashItem.imgUrl,width: kIsWeb? 100.w:double.infinity,),
+        Image.asset(splashItem.imgUrl,width: kIsWeb? 150.w:double.infinity,),
         const Gap(10),
         Text(
           splashItem.title,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize:kIsWeb? 8.sp: 20.sp,
+            fontSize:kIsWeb? 13.sp: 20.sp,
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
@@ -28,7 +28,7 @@ Widget singleSplashPage({
         Text(
           splashItem.description,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize:kIsWeb? 2.sp: 14.sp),
+          style: TextStyle(fontSize:kIsWeb? 6.sp: 14.sp),
         ),
       ],
     );

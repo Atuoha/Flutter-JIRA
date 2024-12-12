@@ -42,14 +42,14 @@ class _SplashScreenState extends State<SplashScreen> {
               actions: [
                 state.currentSplashIndex != state.pages.length - 1
                     ? TextButton(
-                  onPressed: () => context.read<SplashCubit>().skip(),
-                  child: const Text(
-                    'Skip',
-                    style: TextStyle(
-                      color: AppColors.primaryColor,
-                    ),
-                  ),
-                )
+                        onPressed: () => context.read<SplashCubit>().skip(),
+                        child: const Text(
+                          'Skip',
+                          style: TextStyle(
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
+                      )
                     : const SizedBox.shrink()
               ],
             ),
@@ -61,7 +61,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   right: 18,
                 ),
                 child: Column(
-                  crossAxisAlignment:kIsWeb? CrossAxisAlignment.center: CrossAxisAlignment.stretch,
+                  crossAxisAlignment: kIsWeb
+                      ? CrossAxisAlignment.center
+                      : CrossAxisAlignment.stretch,
                   children: [
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.7,
@@ -97,10 +99,14 @@ class _SplashScreenState extends State<SplashScreen> {
                     ),
                     const SizedBox(height: 15),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: kIsWeb ? 50 : 0),
+                      ),
                       onPressed: () =>
-                      state.currentSplashIndex != state.pages.length - 1
-                          ? context.read<SplashCubit>().next()
-                          : context.read<SplashCubit>().launch(),
+                          state.currentSplashIndex != state.pages.length - 1
+                              ? context.read<SplashCubit>().next()
+                              : context.read<SplashCubit>().launch(),
                       child: Wrap(
                         crossAxisAlignment: WrapCrossAlignment.center,
                         spacing: 9,
