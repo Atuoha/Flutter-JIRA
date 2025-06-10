@@ -7,7 +7,7 @@
 
 
 ## Functionalities
-- **Cross-Platform Support:** Full functionality across Android, iOS, and Web platforms.
+- **Cross-Platform Support:** Full functionality across Android, iOS, and Web platforms
 
 
 #### Project Management:
